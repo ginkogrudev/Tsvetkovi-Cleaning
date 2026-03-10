@@ -36,7 +36,7 @@
 </head>
 <body class="bg-vibe-light text-slate-800 font-sans antialiased overflow-x-hidden">
 
-  <nav class="fixed w-full bg-white/80 backdrop-blur-lg z-50 border-b border-slate-200/50 transition-all">
+  <nav x-data="{ mobileMenuOpen: false }" class="fixed w-full bg-white/80 backdrop-blur-lg z-50 border-b border-slate-200/50 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <a href="index.html" class="flex items-center gap-3 group">
@@ -50,14 +50,30 @@
       </a>
 
       <div class="hidden md:flex gap-8 font-bold text-sm text-slate-500">
-        <a href="#segments" class="hover:text-vibe-indigo transition-colors">Кого обслужваме</a>
-        <a href="#packages" class="hover:text-vibe-indigo transition-colors">Пакети</a>
+        <a href="index.html#segments" class="hover:text-vibe-indigo transition-colors">Кого обслужваме</a>
+        <a href="index.html#packages" class="hover:text-vibe-indigo transition-colors">Пакети</a>
         <a href="catalog.html" class="hover:text-vibe-indigo transition-colors">Каталог 🔍</a>
       </div>
 
-      <a href="#contact" class="bg-vibe-yellow text-slate-900 px-6 py-2.5 rounded-xl font-black hover:bg-yellow-400 transition-all shadow-neon hover:-translate-y-1">
-        Вземи Оферта ⚡
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="index.html#contact" class="hidden sm:inline-block bg-vibe-yellow text-slate-900 px-6 py-2.5 rounded-xl font-black hover:bg-yellow-400 transition-all shadow-neon hover:-translate-y-1">
+          Вземи Оферта ⚡
+        </a>
+
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-slate-700 focus:outline-none bg-slate-50 rounded-xl border border-slate-200">
+          <svg x-show="!mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg x-show="mobileMenuOpen" x-cloak class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div x-show="mobileMenuOpen" x-collapse x-cloak class="md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 px-4 pt-4 pb-6 shadow-2xl absolute w-full">
+      <div class="flex flex-col gap-2 font-bold text-slate-700 text-lg">
+        <a href="index.html#segments" @click="mobileMenuOpen = false" class="block p-3 hover:bg-vibe-light rounded-xl transition">Кого обслужваме</a>
+        <a href="index.html#packages" @click="mobileMenuOpen = false" class="block p-3 hover:bg-vibe-light rounded-xl transition">Пакети</a>
+        <a href="catalog.html" @click="mobileMenuOpen = false" class="block p-3 hover:bg-vibe-light rounded-xl transition">Каталог 🔍</a>
+        <a href="index.html#contact" @click="mobileMenuOpen = false" class="block mt-4 bg-vibe-indigo text-white text-center px-6 py-4 rounded-xl font-black shadow-indigo text-lg">Вземи Оферта ⚡</a>
+      </div>
     </div>
   </nav>
 
