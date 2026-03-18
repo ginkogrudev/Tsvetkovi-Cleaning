@@ -44,13 +44,30 @@
 
   <main class="max-w-7xl mx-auto px-4 py-16" x-data="catalogLogic()">
     
-    <div class="mb-12 text-center border-b border-b2b-border pb-12">
+    <div class="mb-8 text-center border-b border-b2b-border pb-8">
       <h1 class="text-4xl md:text-5xl font-black text-b2b-teal mb-4 uppercase">Индустриален Асортимент</h1>
       <p class="text-b2b-tealmid max-w-2xl mx-auto text-lg font-medium">
         Разгледайте нашите наличности. Заявете артикулите, които ви интересуват, и ще получите B2B цена на едро.
       </p>
     </div>
 
+    <div class="bg-b2b-teal text-white border-4 border-b2b-green p-8 md:p-12 mb-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+      <div class="absolute -right-6 -top-10 text-[10rem] opacity-5 font-black text-white pointer-events-none select-none">PDF</div>
+      
+      <div class="relative z-10">
+        <div class="text-b2b-green font-black uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 bg-b2b-green rounded-full animate-pulse"></span> Налично за изтегляне
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black mb-3 uppercase">Пълен Продуктов Каталог</h2>
+        <p class="text-b2b-light opacity-90 font-medium max-w-xl text-lg">
+          Свалете актуалната ни селекция в PDF формат. Всички почистващи препарати, дезинфектанти, консумативи и хартиени изделия на едно място, директно на вашето устройство.
+        </p>
+      </div>
+      
+      <a href="katalog.pdf" download="Цветкови_Трейдинг_Каталог.pdf" class="relative z-10 shrink-0 bg-b2b-green text-white px-8 py-5 font-black uppercase tracking-widest text-sm border-2 border-b2b-green hover:bg-b2b-tealdark hover:border-white transition-colors flex items-center gap-3">
+        <span class="text-2xl">⬇️</span> Свали PDF Версия
+      </a>
+    </div>
     <div class="bg-white p-4 border border-b2b-border mb-10 flex flex-col md:flex-row gap-4">
       <input 
         x-model="searchQuery" 
@@ -91,6 +108,60 @@
       </div>
     </div>
   </main>
+
+   <footer class="bg-[#0A1410] pt-20 pb-10 border-t-4 border-b2b-green">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-b2b-green text-white w-10 h-10 flex items-center justify-center font-black text-xl">ЦК</div>
+            <div class="font-black text-white text-xl tracking-tight">Цветкови Клийнинг</div>
+          </div>
+          <p class="text-sm font-medium text-slate-400">
+            Официален B2B дистрибутор на почистващи препарати, дезинфектанти и хартиени изделия.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-black uppercase tracking-widest mb-6">Меню</h4>
+          <ul class="space-y-3 text-sm font-bold text-slate-400">
+            <li><a href="#segments" class="hover:text-white transition">Кого Обслужваме</a></li>
+            <li><a href="#packages" class="hover:text-white transition">Абонаменти</a></li>
+            <li><a href="catalog.html" class="hover:text-white transition">B2B Каталог</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-black uppercase tracking-widest mb-6">Контакти</h4>
+          <ul class="space-y-3 text-sm font-bold text-slate-400">
+            <li>Стивън Цветков, Управител</li>
+            <li>📞 087 876 5658</li>
+            <li>📧 tsvetkovitrading@gmail.com</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-500 font-black uppercase tracking-widest mb-6 lg:text-right text-xs">Infrastructure By</h4>
+          <div class="flex lg:justify-end">
+            <a href="https://ginkogrudev.com" class="inline-flex items-center gap-3 bg-[#0a0a0a] px-5 py-3 border border-[#222] hover:border-b2b-ggpink transition-colors group">
+              <span class="text-2xl">🐷</span>
+              <span class="text-white font-black text-lg tracking-tight group-hover:text-b2b-ggpink transition-colors">GG Solutions</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest">
+        <p>© 2026 Цветкови Трейдинг. Всички права запазени.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white">Политика</a>
+          <a href="#" class="hover:text-white">Условия</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/catalog.js"></script>
 </body>
